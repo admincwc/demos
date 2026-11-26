@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://admincwc.github.io/demos/ross-construction/sitemap.xml
