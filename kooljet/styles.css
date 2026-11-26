@@ -18,3 +18,57 @@ h1{font-size:clamp(3rem,5.7vw,5.45rem)}h2{font-size:clamp(2.15rem,4.1vw,3.8rem)}
 .formfeedback:not(:empty){background:white;border-left:4px solid var(--blue);padding:1rem;margin-top:1.1rem}.formfeedback h3{margin-bottom:.5rem}.formfeedback dl{display:grid;grid-template-columns:minmax(75px,.7fr) 1fr;gap:.35rem .8rem;overflow-wrap:anywhere}.formfeedback dd{margin:0;font-weight:400}.app-form .choice{padding:.5rem;margin:0;border:1px solid var(--line)}.app-form .choice legend{font:600 1rem Barlow,sans-serif}.choice label{display:inline-block;margin:.35rem}
 
 .headin>.btn{white-space:nowrap}@media(max-width:390px){.brand img{width:89px}.headin{gap:.5rem}.headin>.btn{font-size:.9rem}}
+
+/* A short burst of airflow follows the navigation label. */
+.nav-gust {
+  position: absolute;
+  top: calc(100% - .55rem);
+  left: 0;
+  width: min(100%, 4.3rem);
+  height: 1.1rem;
+  fill: none;
+  stroke: var(--blue);
+  stroke-width: 2;
+  stroke-linecap: round;
+  pointer-events: none;
+  overflow: visible;
+}
+.navlinks a[aria-current="page"] .nav-gust { top: calc(100% + 1px); }
+.nav-gust path {
+  opacity: 0;
+  stroke-dasharray: 1 1;
+  stroke-dashoffset: 1;
+  animation-delay: var(--gust-delay, 0ms);
+}
+.nav-gust path:nth-child(2) { --gust-delay: 55ms; stroke-width: 2.4; }
+.nav-gust path:nth-child(3) { --gust-delay: 110ms; stroke: #5295c8; }
+@keyframes kooljet-airflow {
+  0%   { opacity: 0; stroke-dashoffset: 1; transform: translateX(-7px); }
+  18%  { opacity: .95; }
+  48%  { opacity: 1; stroke-dashoffset: 0; transform: translateX(0); }
+  66%  { opacity: 1; stroke-dashoffset: 0; }
+  100% { opacity: 0; stroke-dashoffset: -1; transform: translateX(7px); }
+}
+@media (prefers-reduced-motion: no-preference) {
+  .navlinks a:focus-visible .nav-gust path {
+    animation-name: kooljet-airflow;
+    animation-duration: 860ms;
+    animation-timing-function: ease-in-out;
+  }
+}
+@media (hover: hover) and (pointer: fine) and (prefers-reduced-motion: no-preference) {
+  .navlinks a:hover .nav-gust path {
+    animation-name: kooljet-airflow;
+    animation-duration: 860ms;
+    animation-timing-function: ease-in-out;
+  }
+}
+@media (max-width: 800px) {
+  .navlinks a .nav-gust,
+  .navlinks a[aria-current="page"] .nav-gust {
+    top: calc(50% - .55rem);
+    right: .5rem;
+    left: auto;
+    width: 3.8rem;
+  }
+}
