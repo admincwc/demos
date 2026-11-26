@@ -1,0 +1,14 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Invasion of the Dragons//Race Day//EN
+CALSCALE:GREGORIAN
+BEGIN:VEVENT
+UID:20270627-raceday@invasionofthedragons.ca
+DTSTAMP:20261126T160000Z
+DTSTART;VALUE=DATE:20270627
+DTEND;VALUE=DATE:20270628
+SUMMARY:Invasion of the Dragons - Race Day
+LOCATION:Shadow Lake\, 77 Alice Street\, Waterford\, Ontario
+DESCRIPTION:Dragon boat fundraising festival at Shadow Lake in Waterford.
+END:VEVENT
+END:VCALENDAR
