@@ -1,0 +1,81 @@
+.home-intro {
+  display:grid;
+  grid-template-columns: 1.05fr 1fr;
+  background:#f0f4f8;
+  overflow:hidden;
+}
+.intro-copy {
+  padding:clamp(38px,5.2vw,78px) clamp(26px,4.5vw,68px) clamp(40px,5.2vw,78px) max(5vw, calc((100vw - 1190px)/2));
+  align-self:center;
+}
+.home-kicker {
+  color:var(--blue);
+  font-size:14px;
+  font-weight:700;
+  margin:0 0 18px;
+}
+.home-intro h1 {
+  color:#182e45;
+  font-size:clamp(44px,4.8vw,74px);
+  line-height:1.01;
+  letter-spacing:-.052em;
+  text-wrap:balance;
+  margin:0 0 23px;
+}
+.intro-summary {max-width:43ch;color:var(--body);font-size:clamp(17px,1.4vw,21px);line-height:1.48}
+.intro-actions {display:flex;flex-wrap:wrap;gap:16px 24px;align-items:center;margin-top:25px}
+.intro-actions>a:last-child,.family-copy a,.local-job a {font-weight:700;color:var(--blue)}
+.intro-photo {min-width:0;position:relative;background:#594c42}
+.intro-photo img {position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:23% center}
+.home-services,.home-reviews {padding-block:clamp(50px,6vw,88px)}
+.service-layout {display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:28px 24px}
+.grid-intro {display:flex;flex-direction:column;justify-content:center;align-items:flex-start;padding:0 10% 10px 0}
+.grid-intro h2,.home-family h2,.home-reviews h2 {color:#19354f;font-size:clamp(36px,3.8vw,58px);font-weight:700;letter-spacing:-.052em;margin:0 0 18px}
+.grid-intro p {color:#475460;font-size:18px;max-width:30ch}
+.service-tile {display:flex;flex-direction:column;text-decoration:none;background:#fff;border:1px solid #d4dde5;border-bottom:3px solid #a9bfd4;border-radius:3px;overflow:hidden}
+.service-tile img {display:block;width:100%;height:auto;aspect-ratio:2/1;object-fit:cover}
+.service-tile div {padding:20px 22px 23px}
+.service-tile h3 {font-size:clamp(20px,1.8vw,27px);line-height:1.14;color:#204e7b;margin:0 0 10px}
+.service-tile p {font-size:16px;line-height:1.45;margin:0;color:var(--body)}
+.service-tile:hover,.service-tile:focus-visible {border-color:var(--blue);background:#f4f8fb}
+.service-tile:hover h3,.service-tile:focus-visible h3 {text-decoration:underline;text-underline-offset:.17em}
+.home-family {background:#edf2f7;border-block:1px solid #d5e0e9}
+.family-layout {display:grid;grid-template-columns:1fr 1fr;gap:10%;padding-block:clamp(44px,5.5vw,80px);align-items:center}
+.family-copy p:not(.home-kicker),.local-job p:not(.home-kicker) {max-width:49ch;line-height:1.62}
+.local-job {padding:clamp(24px,3vw,42px);background:white;border-top:4px solid var(--blue)}
+.local-job h3 {font-size:clamp(24px,2.3vw,35px);line-height:1.13;color:#19354f}
+.local-job div {display:flex;flex-wrap:wrap;gap:5px 20px;font-size:15px}
+.review-layout {display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:28px;margin-top:32px}
+.review-layout figure {margin:0;padding:22px 0 0;border-top:2px solid #235589;display:flex;flex-direction:column;justify-content:space-between}
+.review-layout blockquote {margin:0 0 24px;font-size:clamp(22px,2vw,30px);font-weight:600;line-height:1.23;letter-spacing:-.032em;color:#1e3953}
+.review-layout figcaption b,.review-layout figcaption span {display:block}
+.review-layout figcaption span,.review-layout figcaption a {font-size:14px}
+.review-layout figcaption a {color:var(--blue)}
+.home-contact {background:#235589;color:white}
+.contact-strip {display:grid;grid-template-columns:1.1fr 1fr 1fr;align-items:center;gap:25px;padding-block:36px}
+.contact-strip h2 {font-size:30px;margin-bottom:6px}
+.contact-strip h3 {font-size:16px;letter-spacing:0;margin-bottom:7px}
+.contact-strip>div:not(:first-child) a {font-size:clamp(22px,2.3vw,33px);font-weight:700}
+@media(max-width:930px) {
+  .service-layout {grid-template-columns:repeat(2,minmax(0,1fr));gap:20px}
+  .family-layout {gap:5%}
+  .contact-strip {gap:15px}
+}
+@media(max-width:660px) {
+  .home-intro {grid-template-columns:1fr}
+  .intro-copy {padding:34px 5% 30px}
+  .intro-photo {height:clamp(155px,35vw,215px)}
+  .intro-photo img {object-position:center 48%}
+  .intro-actions {margin-top:16px}
+  .grid-intro {grid-column:1/-1;padding:0}
+  .grid-intro p {max-width:42ch;margin:0}
+  .family-layout,.review-layout,.contact-strip {grid-template-columns:1fr;gap:26px}
+  .review-layout blockquote {margin-bottom:12px}
+}
+@media(max-width:510px) {
+  .service-layout {grid-template-columns:1fr;gap:18px}
+  .service-tile {display:grid;grid-template-columns:29% 1fr;border-bottom-width:1px}
+  .service-tile img {height:100%;aspect-ratio:auto;min-height:120px}
+  .service-tile div {padding:17px 15px}
+  .service-tile p {font-size:15px}
+}
