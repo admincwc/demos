@@ -79,3 +79,10 @@
   .service-tile div {padding:17px 15px}
   .service-tile p {font-size:15px}
 }
+.shop-enquiry.enquiry{background:#235589}
+.shop-enquiry .enquiry-layout{grid-template-columns:minmax(0,1fr) minmax(0,1.12fr);gap:clamp(28px,5vw,64px)}
+.shop-enquiry .enquiry-intro :is(h2,p,a){color:white}
+.shop-enquiry .enquiry-intro a:focus-visible{outline-color:white}
+.shop-map{display:block;width:100%;height:clamp(230px,22vw,315px);border:0;margin:20px 0 10px;background:#e3e8ed}
+.shop-enquiry .request-form{border:0}
+@media(max-width:760px){.shop-enquiry .enquiry-layout{grid-template-columns:minmax(0,1fr)}}
