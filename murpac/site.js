@@ -18,11 +18,3 @@ for (const form of document.forms) {
   });
   form.querySelector('[type=submit]').disabled = false;
 }
-const brandImages = document.querySelectorAll('[data-original-logo]');
-if (brandImages.length) {
-  const original = new Image();
-  original.onload = () => {
-    for (const logo of brandImages) logo.src = original.src;
-  };
-  original.src = brandImages[0].dataset.originalLogo;
-}
